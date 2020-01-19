@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addclass</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="data" (ngSubmit)="addclass()">
+    <ion-card class="ion-padding">
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>เพิ่มวิชา</h3>
+          </div>
+          <div>  
+            
+              <ion-label>รหัสวิชา</ion-label>
+              <ion-select placeholder="Select One"  formControlName="class[]">
+                <ion-select-option *ngFor="let d of dataClass[0]" value="{{dataClass}}" >{{d.idClass}}</ion-select-option>
+              </ion-select>
+              
+
+
+              <ion-label>ID</ion-label>
+              <ion-input class="input1" type="text" placeholder="ID" formControlName="idTeacher"></ion-input>
+              <ion-label>name</ion-label>
+              <ion-input class="input1" type="text" placeholder="name" formControlName="nameTeacher"></ion-input>
+              <ion-label>username</ion-label>
+              <ion-input class="input1" type="text" placeholder="username" formControlName="username"></ion-input>
+              <ion-label>password</ion-label>
+              <ion-input class="input1" type="text" placeholder="password" formControlName="password"></ion-input>
+          </div>
+          <div>
+            <ion-button size="large" expand="block" type="submit">บันทึก</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </form>
+
+</ion-content>
